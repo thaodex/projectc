@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: licensevault
+      POSTGRES_USER: licensevault
+      POSTGRES_PASSWORD: change-me
+    ports:
+      - "5432:5432"
+    volumes:
+      - licensevault-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U licensevault -d licensevault"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  licensevault-postgres:

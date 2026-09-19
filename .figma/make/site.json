@@ -1,0 +1,10 @@
+{
+  "description": "Connect with others effortlessly through a user-friendly platform designed for seamless communication and collaboration, enhancing personal and professional interactions.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

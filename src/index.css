@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
+
+  --background: #f8f9fc;
+  --foreground: #0f1117;
+  --card: #ffffff;
+  --card-foreground: #0f1117;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f2f7;
+  --secondary-foreground: #3d4155;
+  --muted: #f1f2f7;
+  --muted-foreground: #6b7280;
+  --accent: #eef2ff;
+  --accent-foreground: #4338ca;
+  --border: #e5e7f0;
+  --ring: #6366f1;
+  --radius: 10px;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #374151;
+
+  /* Status colors */
+  --status-active: #10b981;
+  --status-suspended: #f59e0b;
+  --status-revoked: #ef4444;
+  --status-expired: #6b7280;
+}
+
+.dark {
+  --background: #0d0f18;
+  --foreground: #e8eaf6;
+  --card: #151825;
+  --card-foreground: #e8eaf6;
+  --primary: #818cf8;
+  --primary-foreground: #1e1b4b;
+  --secondary: #1e2132;
+  --secondary-foreground: #c7cae8;
+  --muted: #1a1d2e;
+  --muted-foreground: #9199b8;
+  --accent: #1e2347;
+  --accent-foreground: #a5b4fc;
+  --border: #252840;
+  --ring: #818cf8;
+  --sidebar: #111320;
+  --sidebar-foreground: #c7cae8;
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
+
+/* Selection */
+::selection { background: var(--accent); color: var(--accent-foreground); }
+
+/* Mono key display */
+.key-mono {
+  font-family: var(--font-jetbrains);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.project-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--foreground);
+  padding: 8px 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.project-input:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 18%, transparent);
+}
