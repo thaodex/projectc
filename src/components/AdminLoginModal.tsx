@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { KeyRound, ShieldCheck, X } from 'lucide-react';
 
-const apiBase = (import.meta.env.VITE_API_URL ?? '').replace(/\/$/, '');
+const apiBase = (import.meta.env.VITE_API_URL ?? 'https://projectc-production-3300.up.railway.app').replace(/\/$/, '');
 
 export default function AdminLoginModal({ onClose, onAuthenticated }: { onClose: () => void; onAuthenticated: (email: string) => void }) {
   const [email, setEmail] = useState('');
